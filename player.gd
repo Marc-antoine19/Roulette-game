@@ -34,6 +34,10 @@ func _unhandled_input(event):
 			if current_target and current_target.has_method("interact"):
 				current_target.interact()
 
+	# ✅ ADD THIS RIGHT HERE (NEW)
+	if event.is_action_pressed("interact"):
+		if current_target and current_target.has_method("interact"):
+			current_target.interact()
 
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
