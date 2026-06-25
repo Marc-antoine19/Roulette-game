@@ -26,15 +26,13 @@ func highlight(state):
 func interact():
 	var game = get_node("/root/Main/GameManager")
 
-	if game.current_bet <= 0:
-		print("No bet placed!")
+	if game.current_bets.is_empty():
+		print("No bets placed!")
 		return
 
 	press_animation()
 
 	print("Spin button clicked!")
-
-	game.spend_bet()
 
 	var table = get_parent().get_node("new spinny table again2_0")
 	table.spin()

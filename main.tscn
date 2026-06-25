@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c7gcja13dlwaf" path="res://player.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://wjrtkyqlq8vs" path="res://spinbutton.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://cxupp4pib4hk6" path="res://ui.gd" id="3_5vw27"]
-[ext_resource type="PackedScene" uid="uid://cwp52v843m5nk" path="res://bullshit ass table2.glb" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://cs523vk85cd0r" path="res://Screenshot 2026-06-24 140323.png" id="4_kek77"]
 [ext_resource type="PackedScene" uid="uid://dky3w1i7ytoev" path="res://new spinny table again2.0.glb" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://bd0vu6p074nx2" path="res://new_spinny_table_again_2.0.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://1altmltwkm6j" path="res://bullshit_ass_table_2.gd" id="5_kek77"]
@@ -236,24 +236,485 @@ text = "$100 000"
 
 [node name="BetPanel" type="Panel" parent="UI"]
 visible = false
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -322.0
+offset_right = 574.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/BetPanel"]
+[node name="TableImage" type="TextureRect" parent="UI/BetPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kek77")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Button1" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 550.0
+offset_top = 106.0
+offset_right = 603.0
+offset_bottom = 140.0
+
+[node name="1st12" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 492.0
+offset_top = 105.0
+offset_right = 545.0
+offset_bottom = 255.0
+
+[node name="2nd12" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 493.0
+offset_top = 255.0
+offset_right = 546.0
+offset_bottom = 405.0
+
+[node name="1to18" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 431.0
+offset_top = 105.0
+offset_right = 491.0
+offset_bottom = 178.0
+
+[node name="EVEN" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 432.0
+offset_top = 179.0
+offset_right = 492.0
+offset_bottom = 252.0
+
+[node name="RED" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 433.0
+offset_top = 256.0
+offset_right = 493.0
+offset_bottom = 329.0
+
+[node name="BLACK" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 433.0
+offset_top = 332.0
+offset_right = 493.0
+offset_bottom = 405.0
+
+[node name="ODD" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 433.0
+offset_top = 408.0
+offset_right = 493.0
+offset_bottom = 481.0
+
+[node name="19to36" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 434.0
+offset_top = 483.0
+offset_right = 494.0
+offset_bottom = 556.0
+
+[node name="3rd12" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 494.0
+offset_top = 407.0
+offset_right = 547.0
+offset_bottom = 557.0
+
+[node name="Button2" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 607.0
+offset_top = 105.0
+offset_right = 663.0
+offset_bottom = 141.0
+
+[node name="0" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 552.0
+offset_top = 67.0
+offset_right = 634.0
+offset_bottom = 104.0
+
+[node name="00" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 638.0
+offset_top = 67.0
+offset_right = 717.0
+offset_bottom = 103.0
+
+[node name="2to1" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 551.0
+offset_top = 558.0
+offset_right = 605.0
+offset_bottom = 590.0
+
+[node name="2to3" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 667.0
+offset_top = 558.0
+offset_right = 721.0
+offset_bottom = 590.0
+
+[node name="2to2" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 609.0
+offset_top = 558.0
+offset_right = 663.0
+offset_bottom = 590.0
+
+[node name="Button36" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 666.0
+offset_top = 521.0
+offset_right = 721.0
+offset_bottom = 557.0
+
+[node name="Button35" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 609.0
+offset_top = 522.0
+offset_right = 665.0
+offset_bottom = 556.0
+
+[node name="Button34" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 550.0
+offset_top = 520.0
+offset_right = 607.0
+offset_bottom = 556.0
+
+[node name="Button33" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 666.0
+offset_top = 483.0
+offset_right = 721.0
+offset_bottom = 517.0
+
+[node name="Button32" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 607.0
+offset_top = 483.0
+offset_right = 664.0
+offset_bottom = 520.0
+
+[node name="Button31" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 551.0
+offset_top = 483.0
+offset_right = 607.0
+offset_bottom = 519.0
+
+[node name="Button30" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 664.0
+offset_top = 444.0
+offset_right = 720.0
+offset_bottom = 481.0
+
+[node name="Button29" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 608.0
+offset_top = 443.0
+offset_right = 662.0
+offset_bottom = 481.0
+
+[node name="Button28" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 552.0
+offset_top = 446.0
+offset_right = 607.0
+offset_bottom = 481.0
+
+[node name="Button27" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 665.0
+offset_top = 409.0
+offset_right = 719.0
+offset_bottom = 445.0
+
+[node name="Button26" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 609.0
+offset_top = 407.0
+offset_right = 663.0
+offset_bottom = 444.0
+
+[node name="Button25" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 550.0
+offset_top = 409.0
+offset_right = 606.0
+offset_bottom = 445.0
+
+[node name="Button24" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 665.0
+offset_top = 369.0
+offset_right = 720.0
+offset_bottom = 406.0
+
+[node name="Button23" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 608.0
+offset_top = 370.0
+offset_right = 664.0
+offset_bottom = 406.0
+
+[node name="Button22" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 552.0
+offset_top = 369.0
+offset_right = 605.0
+offset_bottom = 407.0
+
+[node name="Button21" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 667.0
+offset_top = 332.0
+offset_right = 719.0
+offset_bottom = 369.0
+
+[node name="Button20" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 607.0
+offset_top = 331.0
+offset_right = 663.0
+offset_bottom = 369.0
+
+[node name="Button19" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 550.0
+offset_top = 333.0
+offset_right = 605.0
+offset_bottom = 367.0
+
+[node name="Button18" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 666.0
+offset_top = 294.0
+offset_right = 719.0
+offset_bottom = 330.0
+
+[node name="Button17" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 609.0
+offset_top = 294.0
+offset_right = 663.0
+offset_bottom = 330.0
+
+[node name="Button16" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 549.0
+offset_top = 293.0
+offset_right = 606.0
+offset_bottom = 330.0
+
+[node name="Button15" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 668.0
+offset_top = 255.0
+offset_right = 719.0
+offset_bottom = 290.0
+
+[node name="Button14" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 608.0
+offset_top = 255.0
+offset_right = 662.0
+offset_bottom = 291.0
+
+[node name="Button13" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 552.0
+offset_top = 255.0
+offset_right = 603.0
+offset_bottom = 291.0
+
+[node name="Button12" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 667.0
+offset_top = 218.0
+offset_right = 718.0
+offset_bottom = 252.0
+
+[node name="Button11" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 609.0
+offset_top = 218.0
+offset_right = 664.0
+offset_bottom = 254.0
+
+[node name="Button10" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 549.0
+offset_top = 217.0
+offset_right = 605.0
+offset_bottom = 252.0
+
+[node name="Button9" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 666.0
+offset_top = 181.0
+offset_right = 722.0
+offset_bottom = 218.0
+
+[node name="Button8" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 607.0
+offset_top = 181.0
+offset_right = 663.0
+offset_bottom = 216.0
+
+[node name="Button7" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 549.0
+offset_top = 180.0
+offset_right = 604.0
+offset_bottom = 215.0
+
+[node name="Button6" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 665.0
+offset_top = 142.0
+offset_right = 716.0
+offset_bottom = 177.0
+
+[node name="Button3" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 665.0
+offset_top = 107.0
+offset_right = 717.0
+offset_bottom = 140.0
+
+[node name="Button4" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 550.0
+offset_top = 144.0
+offset_right = 607.0
+offset_bottom = 180.0
+
+[node name="Button5" type="Button" parent="UI/BetPanel/TableImage"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 606.0
+offset_top = 143.0
+offset_right = 661.0
+offset_bottom = 178.0
+
+[node name="Chip100Button" type="Button" parent="UI/BetPanel"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 606.0
+offset_right = 572.0
+offset_bottom = 663.0
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 34
+text = "100 Chips"
+
+[node name="Chip500Button" type="Button" parent="UI/BetPanel"]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 606.0
+offset_right = 646.0
+offset_bottom = 663.0
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 34
+text = "500 Chips"
+
+[node name="Chip1000Button" type="Button" parent="UI/BetPanel"]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 607.0
+offset_right = 739.0
+offset_bottom = 664.0
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 34
+text = "1000 Chips"
+
+[node name="ConfirmButton" type="Button" parent="UI/BetPanel"]
+layout_mode = 0
+offset_left = 630.0
+offset_top = 606.0
+offset_right = 771.0
+offset_bottom = 663.0
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 34
+text = "Confirm"
+
+[node name="CancelButton" type="Button" parent="UI/BetPanel"]
+layout_mode = 0
+offset_left = 689.0
+offset_top = 607.0
+offset_right = 809.0
+offset_bottom = 664.0
+scale = Vector2(0.4, 0.4)
+theme_override_font_sizes/font_size = 34
+text = "Cancel"
+
+[node name="TotalBetLabel" type="Label" parent="UI/BetPanel"]
 layout_mode = 0
 offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="UI/BetPanel/VBoxContainer"]
-layout_mode = 2
-text = "Enter your bet:"
-
-[node name="LineEdit" type="LineEdit" parent="UI/BetPanel/VBoxContainer"]
-layout_mode = 2
-
-[node name="ConfirmButton" type="Button" parent="UI/BetPanel/VBoxContainer"]
-layout_mode = 2
-text = "Confirm"
+offset_bottom = 23.0
 
 [node name="CeilingLight" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.8, 0)
@@ -277,19 +738,72 @@ script = ExtResource("5_7mycd")
 script = ExtResource("8_4c57u")
 
 [node name="BettingTable" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 3)
 script = ExtResource("5_kek77")
-
-[node name="bullshit ass table2" parent="BettingTable" instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0918, 0.2, 2.96853)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BettingTable/bullshit ass table2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19209e-07, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BettingTable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59466, 0.299217, -0.0172758)
 shape = SubResource("BoxShape3D_4c57u")
 
-[node name="Fucckass table the Third finalplsplsdihateblenderfklop" parent="." instance=ExtResource("9_kek77")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.092, 0.2, 2.969)
+[node name="roulette table" parent="BettingTable" instance=ExtResource("9_kek77")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.6, 0.3, -0.0309999)
 
-[connection signal="pressed" from="UI/BetPanel/VBoxContainer/ConfirmButton" to="UI" method="confirm_bet"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="BettingTable/roulette table"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.99953, -0.1, -1.5082)
+skeleton = NodePath("")
+
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button1" to="UI" method="_on_button_1_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/1st12" to="UI" method="_on_st_12_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/2nd12" to="UI" method="_on_nd_12_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/1to18" to="UI" method="_on_to_18_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/EVEN" to="UI" method="_on_even_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/RED" to="UI" method="_on_red_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/BLACK" to="UI" method="_on_black_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/ODD" to="UI" method="_on_odd_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/19to36" to="UI" method="_on_to_36_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/3rd12" to="UI" method="_on_rd_12_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button2" to="UI" method="_on_button_2_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/0" to="UI" method="_on__pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/00" to="UI" method="_on__pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/2to1" to="UI" method="_on_to_1_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/2to3" to="UI" method="_on_to_1_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/2to2" to="UI" method="_on_to_1_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button36" to="UI" method="_on_button_36_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button35" to="UI" method="_on_button_35_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button34" to="UI" method="_on_button_34_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button33" to="UI" method="_on_button_33_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button32" to="UI" method="_on_button_32_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button31" to="UI" method="_on_button_31_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button30" to="UI" method="_on_button_30_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button29" to="UI" method="_on_button_29_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button28" to="UI" method="_on_button_28_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button27" to="UI" method="_on_button_27_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button26" to="UI" method="_on_button_26_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button25" to="UI" method="_on_button_25_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button24" to="UI" method="_on_button_24_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button23" to="UI" method="_on_button_23_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button22" to="UI" method="_on_button_22_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button21" to="UI" method="_on_button_21_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button20" to="UI" method="_on_button_20_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button19" to="UI" method="_on_button_19_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button18" to="UI" method="_on_button_18_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button17" to="UI" method="_on_button_17_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button16" to="UI" method="_on_button_16_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button15" to="UI" method="_on_button_15_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button14" to="UI" method="_on_button_14_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button13" to="UI" method="_on_button_13_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button12" to="UI" method="_on_button_12_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button11" to="UI" method="_on_button_11_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button10" to="UI" method="_on_button_10_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button9" to="UI" method="_on_button_9_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button8" to="UI" method="_on_button_8_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button7" to="UI" method="_on_button_7_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button6" to="UI" method="_on_button_6_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button3" to="UI" method="_on_button_3_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button4" to="UI" method="_on_button_4_pressed"]
+[connection signal="pressed" from="UI/BetPanel/TableImage/Button5" to="UI" method="_on_button_5_pressed"]
+[connection signal="pressed" from="UI/BetPanel/Chip100Button" to="UI" method="_on_chip_100_button_pressed"]
+[connection signal="pressed" from="UI/BetPanel/Chip500Button" to="UI" method="_on_chip_500_button_pressed"]
+[connection signal="pressed" from="UI/BetPanel/Chip1000Button" to="UI" method="_on_chip_1000_button_pressed"]
+[connection signal="pressed" from="UI/BetPanel/ConfirmButton" to="UI" method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="UI/BetPanel/CancelButton" to="UI" method="_on_cancel_button_pressed"]
