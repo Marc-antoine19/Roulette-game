@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var bet_panel = $BetPanel
+@onready var warning_label = $WarningLabel
 
 @onready var game = get_node("/root/Main/GameManager")
 var selected_chip = 100
@@ -183,4 +184,13 @@ func _on_to_12_pressed() -> void:
 func _on_00_pressed() -> void:
 	place_number_bet("00")
 func _on__pressed() -> void:
-	place_number_bet("0")
+	
+	place_number_bet(0)
+func show_message(text):
+
+	warning_label.text = text
+	warning_label.visible = true
+
+	await get_tree().create_timer(5.0).timeout
+
+	warning_label.visible = false

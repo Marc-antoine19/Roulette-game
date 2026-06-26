@@ -2,14 +2,15 @@
 
 [ext_resource type="Script" uid="uid://c7gcja13dlwaf" path="res://player.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://wjrtkyqlq8vs" path="res://spinbutton.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cmdy403ilht64" path="res://Suzanne.glb" id="2_4c57u"]
 [ext_resource type="Script" uid="uid://cxupp4pib4hk6" path="res://ui.gd" id="3_5vw27"]
 [ext_resource type="Texture2D" uid="uid://cs523vk85cd0r" path="res://Screenshot 2026-06-24 140323.png" id="4_kek77"]
-[ext_resource type="PackedScene" uid="uid://dky3w1i7ytoev" path="res://new spinny table again2.0.glb" id="4_lquwl"]
-[ext_resource type="Script" uid="uid://bd0vu6p074nx2" path="res://new_spinny_table_again_2.0.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://1altmltwkm6j" path="res://bullshit_ass_table_2.gd" id="5_kek77"]
 [ext_resource type="Script" uid="uid://yn2kxks7osf5" path="res://game_manager.gd" id="8_4c57u"]
+[ext_resource type="PackedScene" uid="uid://m57xrvtuj2xo" path="res://FinalRoulette.tscn" id="9_4c57u"]
 [ext_resource type="PackedScene" uid="uid://berh26v77xcnn" path="res://Fucckass table the Third finalplsplsdihateblenderfklop.glb" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://byedd5nl2cu2v" path="res://chip.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://lrkunhgs5eow" path="res://final_fucking_table_2.tscn" id="11_efxa6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 size = Vector3(16, 0.4, 16)
@@ -61,10 +62,6 @@ size = Vector3(16, 0.2, 16)
 albedo_color = Color(0.686275, 0.686275, 0.686275, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_efxa6"]
-radius = 0.4
-height = 1.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_dg77c"]
 radius = 0.4
 height = 1.0
 
@@ -181,15 +178,14 @@ script = ExtResource("1_ig7tw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_efxa6")
 
-[node name="Body" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-mesh = SubResource("CapsuleMesh_dg77c")
-
 [node name="Head" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.396161)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head"]
 current = true
+
+[node name="Suzanne2" parent="Player" instance=ExtResource("2_4c57u")]
+transform = Transform3D(-0.7, 0, 6.11959e-08, 0, 0.65, 0, -6.11959e-08, 0, -0.7, 0, 0, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 0, 0, 0)
@@ -200,8 +196,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ig7tw")
-
-[node name="Camera3D" type="Camera3D" parent="."]
 
 [node name="Spinbutton" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
@@ -729,6 +723,31 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
+[node name="Label" type="Label" parent="UI/BetPanel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -409.0
+offset_top = 51.0
+offset_right = -85.0
+offset_bottom = 102.0
+grow_horizontal = 0
+text = "Click on where you want to place your bet"
+
+[node name="WarningLabel" type="Label" parent="UI"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 57.0
+offset_right = 165.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Place bets before trying to spin the wheel!"
+
 [node name="CeilingLight" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.8, 0)
 light_color = Color(1, 0.921569, 0.784314, 1)
@@ -740,10 +759,6 @@ spot_angle = 60.0
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0.1)
 material_override = SubResource("StandardMaterial3D_7mycd")
 mesh = SubResource("SphereMesh_h2yge")
-
-[node name="new spinny table again2_0" parent="." instance=ExtResource("4_lquwl")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 2.41918, 0.358955, -1.91919)
-script = ExtResource("5_7mycd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
@@ -768,115 +783,115 @@ skeleton = NodePath("")
 [node name="BetPositions" type="Node3D" parent="BettingTable/roulette table"]
 
 [node name="Spot1" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.868, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87, 0, 0)
 
 [node name="Spot2" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 0, -0.578)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87, 0, -0.55)
 
 [node name="RedSpot" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33, 0, 1.084)
 
 [node name="Spot3" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87145, 0, -1.10617)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87, 0, -1.1)
 
 [node name="Spot4" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50496, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54, 0, 0)
 
 [node name="Spot5" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51798, 0, -0.55736)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54, 0, -0.55)
 
 [node name="Spot6" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52467, 0, -1.10624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54, 0, -1.1)
 
 [node name="Spot7" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.18173, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, 0)
 
 [node name="Spot8" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16713, 0, -0.546804)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, -0.55)
 
 [node name="Spot9" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19649, 0, -1.10907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0, -1.1)
 
 [node name="Spot10" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.839819, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83, 0, 0)
 
 [node name="Spot11" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84518, 0, -0.566096)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83, 0, -0.55)
 
 [node name="Spot12" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.841204, 0, -1.10045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.83, 0, -1.1)
 
 [node name="Spot13" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.486068, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48, 0, 0)
 
 [node name="Spot14" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.483876, 0, -0.557815)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48, 0, -0.55)
 
 [node name="Spot15" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.475158, 0, -1.11107)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48, 0, -1.1)
 
 [node name="Spot16" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.141155, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13, 0, 0)
 
 [node name="Spot17" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.135052, 0, -0.575958)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13, 0, -0.55)
 
 [node name="Spot18" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.153047, 0, -1.10283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13, 0, -1.1)
 
 [node name="Spot19" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.218778, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0, 0)
 
 [node name="Spot20" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.235956, 0, -0.540184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0, -0.55)
 
 [node name="Spot21" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.223078, 0, -1.11766)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0, -1.1)
 
 [node name="Spot22" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5908, 0, 2.38419e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58, 0, 0)
 
 [node name="Spot23" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.594356, 0, -0.553425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58, 0, -0.55)
 
 [node name="Spot24" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.576246, 0, -1.0905)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58, 0, -1.1)
 
 [node name="Spot25" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929075, 0, 2.38419e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93, 0, 0)
 
 [node name="Spot26" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.930944, 0, -0.560109)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93, 0, -0.55)
 
 [node name="Spot27" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93906, 0, -1.0917)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93, 0, -1.1)
 
 [node name="Spot28" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28594, 0, 2.38419e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0, 0)
 
 [node name="Spot29" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28817, 0, -0.53863)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0, -0.55)
 
 [node name="Spot30" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30946, 0, -1.06166)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 0, -1.1)
 
 [node name="Spot31" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63706, 0, 2.38419e-07)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63, 0, 0)
 
 [node name="Spot32" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6167, 0, -0.55326)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63, 0, -0.55)
 
 [node name="Spot33" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63612, 0, -1.09974)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63, 0, -1.1)
 
 [node name="Spot34" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97178, 0, 2.38419e-07)
 
 [node name="Spot35" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.99026, 0, -0.568174)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.972, 0, -0.55)
 
 [node name="Spot36" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97814, 0, -1.07791)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.972, 0, -1.1)
 
 [node name="Spot0" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20394, 0, -0.149059)
@@ -885,43 +900,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20394, 0, -0.149059)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20394, 0, -1.0013)
 
 [node name="BlackSpot" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465319, 0, 1.02351)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465319, 0, 1.05922)
 
 [node name="OddSpot" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13494, 0, 1.0116)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13494, 0, 1.05657)
 
 [node name="EvenSpot" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0342, 0, 1.0532)
 
 [node name="1st12Spot" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25884, 0, 0.453998)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40058, 0, 0.535963)
 
 [node name="2nd12Spot" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466998, 0, 0.552806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0466998, 0, 0.543356)
 
 [node name="3rd12Spot" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46353, 0, 0.481223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46353, 0, 0.54116)
 
 [node name="1to18Spot" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67181, 0, 1.0165)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67181, 0, 1.05363)
 
 [node name="19to36Spot" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8519, 0, 1.00201)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8519, 0, 1.05572)
 
 [node name="2to1Spot" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30628, 0, -0.0556152)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.306, 0, 0)
 
 [node name="2to1Spot2" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30628, 0, -0.561867)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.306, 0, -0.55)
 
 [node name="2to1Spot3" type="Marker3D" parent="BettingTable/roulette table/BetPositions"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30628, 0, -1.10542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.306, 0, -1.1)
 
 [node name="Chip" parent="." instance=ExtResource("10_4c57u")]
+visible = false
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Chip"]
 material_override = SubResource("StandardMaterial3D_efxa6")
 mesh = SubResource("CylinderMesh_dg77c")
+
+[node name="Final fucking table" parent="." instance=ExtResource("9_4c57u")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.49934, 0.608218, -1.02363)
+
+[node name="Final fucking table2" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [connection signal="pressed" from="UI/BetPanel/TableImage/Button1" to="UI" method="_on_button_1_pressed"]
 [connection signal="pressed" from="UI/BetPanel/TableImage/1st12" to="UI" method="_on_st_12_pressed"]

@@ -56,8 +56,6 @@ func show_bets(bets):
 			marker_name = "2to1Spot2"
 		elif bet == "3rd 2 to 1":
 			marker_name = "2to1Spot3"
-		elif bet == "0":
-			marker_name = "Spot0"
 		elif bet == "00":
 			marker_name = "Spot00"
 
@@ -83,3 +81,9 @@ func show_bets(bets):
 				stack_index * 0.04,
 				randf_range(-0.01, 0.01)
 			)
+func clear_bets():
+
+	for marker in bet_positions.get_children():
+
+		for child in marker.get_children():
+			child.queue_free()

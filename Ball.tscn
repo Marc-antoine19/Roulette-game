@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwwfxd8uchkh2"]
+
+[ext_resource type="Script" uid="uid://cm2de1xkm18tk" path="res://ball.gd" id="1_gk6bx"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_pa54t"]
+radius = 0.025
+height = 0.05
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gk6bx"]
+
+[node name="Ball" type="RigidBody3D"]
+mass = 0.1
+gravity_scale = 0.25
+linear_damp = 0.6
+angular_damp = 0.5
+script = ExtResource("1_gk6bx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_pa54t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+shape = SubResource("SphereShape3D_gk6bx")

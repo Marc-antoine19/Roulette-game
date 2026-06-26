@@ -3,6 +3,7 @@ extends StaticBody3D
 @onready var mesh = $MeshInstance3D
 var original_material
 var original_position
+var failed_spins = 0
 
 func _ready():
 	original_material = mesh.material_override
@@ -25,14 +26,27 @@ func highlight(state):
 
 func interact():
 	var game = get_node("/root/Main/GameManager")
+	var ui = get_node("/root/Main/UI")
 
 	if game.current_bets.is_empty():
-		print("No bets placed!")
+
+		failed_spins += 1
+
+		if failed_spins >= 5:
+			ui.show_message("Place a fucking bet already!")
+		else:
+			ui.show_message("Place bets before trying to spin the wheel!")
+
 		return
+
+	failed_spins = 0
 
 	press_animation()
 
-	print("Spin button clicked!")
-
-	var table = get_parent().get_node("new spinny table again2_0")
+	var table = get_parent().get_node("Final fucking table")
 	table.spin()
+
+	var betting_table = get_node("/root/Main/BettingTable")
+	betting_table.clear_bets()
+
+	game.current_bets.clear()
