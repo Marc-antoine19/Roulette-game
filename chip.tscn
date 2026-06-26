@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://byedd5nl2cu2v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uumci"]
+albedo_color = Color(1, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kek77"]
+material = SubResource("StandardMaterial3D_uumci")
+top_radius = 0.08
+bottom_radius = 0.08
+height = 0.04
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ri5qt"]
+cull_mode = 1
+albedo_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ojlvc"]
+top_radius = 0.085
+bottom_radius = 0.085
+height = 0.045
+
+[node name="Chip" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_kek77")
+
+[node name="OutlineMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ri5qt")
+mesh = SubResource("CylinderMesh_ojlvc")

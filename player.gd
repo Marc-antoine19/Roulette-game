@@ -105,3 +105,7 @@ func clear_highlight():
 		current_target.highlight(false)
 
 	current_target = null
+
+
+func _on_00_pressed() -> void:
+	pass # Replace with function body.

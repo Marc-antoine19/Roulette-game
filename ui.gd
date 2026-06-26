@@ -140,8 +140,13 @@ func _on_confirm_button_pressed():
 
 	game.money -= total_bet
 	game.current_bets = bets.duplicate()
+	var table = get_node("/root/Main/BettingTable")
+	table.show_bets(game.current_bets)
 
 	game.update_ui()
+	bets.clear()
+	total_bet = 0
+	update_bet_label()
 
 	close_bet_menu()
 
@@ -153,33 +158,29 @@ func _on_cancel_button_pressed():
 
 func _on_st_12_pressed() -> void:
 	place_special_bet("1st on 12")
-
 func _on_nd_12_pressed() -> void:
 	place_special_bet("2nd on 12")
-
 func _on_to_18_pressed() -> void:
 	place_special_bet("1 to 18")
-
 func _on_even_pressed() -> void:
 	place_special_bet("EVEN")
-
 func _on_red_pressed() -> void:
 	place_special_bet("RED")
-
 func _on_black_pressed() -> void:
 	place_special_bet("BLACK")
-
 func _on_odd_pressed() -> void:
 	place_special_bet("ODD")
-
 func _on_to_36_pressed() -> void:
 	place_special_bet("19 to 36")
-
 func _on_rd_12_pressed() -> void:
 	place_special_bet("3rd on 12")
-
 func _on_to_1_pressed() -> void:
-	place_special_bet("2 to 1")
-
+	place_special_bet("1st 2 to 1")
+func _on_to_13_pressed() -> void:
+	place_special_bet("2nd 2 to 1")
+func _on_to_12_pressed() -> void:
+	place_special_bet("3rd 2 to 1")
+func _on_00_pressed() -> void:
+	place_number_bet("00")
 func _on__pressed() -> void:
-	place_number_bet(0)
+	place_number_bet("0")
